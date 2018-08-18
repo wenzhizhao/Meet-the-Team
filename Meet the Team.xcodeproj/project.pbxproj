@@ -13,6 +13,7 @@
 		F1E098CC2128AEC400C39E2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1E098CB2128AEC400C39E2B /* Assets.xcassets */; };
 		F1E098CF2128AEC400C39E2B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1E098CD2128AEC400C39E2B /* LaunchScreen.storyboard */; };
 		F1E098DA2128AEC400C39E2B /* Meet_the_TeamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E098D92128AEC400C39E2B /* Meet_the_TeamTests.swift */; };
+		F1E098E62128AF2B00C39E2B /* team.json in Resources */ = {isa = PBXBuildFile; fileRef = F1E098E52128AF2A00C39E2B /* team.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		F1E098D52128AEC400C39E2B /* Meet the TeamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Meet the TeamTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1E098D92128AEC400C39E2B /* Meet_the_TeamTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meet_the_TeamTests.swift; sourceTree = "<group>"; };
 		F1E098DB2128AEC400C39E2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1E098E52128AF2A00C39E2B /* team.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = team.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 		F1E098B82128AEC300C39E2B = {
 			isa = PBXGroup;
 			children = (
+				F1E098E42128AF1800C39E2B /* Assets */,
 				F1E098C32128AEC300C39E2B /* Meet the Team */,
 				F1E098D82128AEC400C39E2B /* Meet the TeamTests */,
 				F1E098C22128AEC300C39E2B /* Products */,
@@ -94,6 +97,14 @@
 				F1E098DB2128AEC400C39E2B /* Info.plist */,
 			);
 			path = "Meet the TeamTests";
+			sourceTree = "<group>";
+		};
+		F1E098E42128AF1800C39E2B /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				F1E098E52128AF2A00C39E2B /* team.json */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,6 +188,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1E098E62128AF2B00C39E2B /* team.json in Resources */,
 				F1E098CF2128AEC400C39E2B /* LaunchScreen.storyboard in Resources */,
 				F1E098CC2128AEC400C39E2B /* Assets.xcassets in Resources */,
 				F1E098CA2128AEC300C39E2B /* Main.storyboard in Resources */,
