@@ -7,19 +7,47 @@
 //
 
 import UIKit
+import os
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    static let fileName = "team"
+    @IBOutlet weak var infoListTableView: UITableView!
+    private var memberList = [TeamMember]()
+    private var dataManager = DataManager()
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        setUpInitialUI()
+        if let list = dataManager.decodeJsonData(from: ViewController.fileName) {
+            memberList = list
+        }
+    }
+    
+    private func setUpInitialUI() {
+        infoListTableView.rowHeight = 88.0
+        infoListTableView.tableFooterView = UIView()
+        title = "Meet The Team"
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return memberList.count
     }
-
-
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let infoCell = tableView.dequeueReusableCell(withIdentifier: TeamMemberTableViewCell.identifier) as? TeamMemberTableViewCell else {
+            return UITableViewCell()
+        }
+        infoCell.configureCell(memberList[indexPath.row])
+        return infoCell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: DetailInfoViewController.identifier) as? DetailInfoViewController, let cell = tableView.cellForRow(at: indexPath) as? TeamMemberTableViewCell else {
+            os_log("Cannot find DetailInfoViewController")
+            return
+        }
+        vc.configure(with: memberList[indexPath.row], and: cell.profileImage)
+        tableView.deselectRow(at: indexPath, animated: true)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
